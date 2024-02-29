@@ -2,14 +2,14 @@
 import { ref } from 'vue'
 import { CloseOne } from '@icon-park/vue-next/es'
 import { isAbleArray } from 'tree-esm-lib'
-const videos = ref([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
+const videos = ref(['1', '2', '3'])
 </script>
 
 <template>
   <main class="flex-1 overflow-y-auto">
     <template v-if="isAbleArray(videos)">
       <section v-for="(video, index) in videos" :key="index" class="videoContainer">
-        {{ video }}
+        <div class="w-[90%] truncate">{{ video }}</div>
         <div class="icon">
           <close-one theme="outline" size="12" />
         </div>
@@ -29,8 +29,8 @@ const videos = ref([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 1
      cursor-pointer opacity-70 
      hover:opacity-90 
      hover:scale-125
-     duration-300 
-    hover:text-red-500;
+     hover:text-red-500
+     duration-300;
   }
 }
 </style>
