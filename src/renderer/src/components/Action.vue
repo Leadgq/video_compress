@@ -1,5 +1,5 @@
 <template>
-  <main class="mt-6 flex justify-center">
+  <main class="flex justify-center">
     <section class="flex gap-2">
       <div class="button">
         <plus theme="outline" size="28" />
