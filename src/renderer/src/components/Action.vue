@@ -17,6 +17,6 @@ import { Plus, UpdateRotation } from '@icon-park/vue-next/es'
 
 <style lang="scss" scoped>
 .button {
-  @apply w-20 h-20 bg-gray-50 rounded-lg flex  justify-center items-center cursor-pointer text-slate-600;
+  @apply w-20 h-20 bg-white rounded-lg flex  justify-center items-center cursor-pointer text-slate-600;
 }
 </style>
