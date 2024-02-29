@@ -6,4 +6,8 @@
   </div>
 </template>
 
-<style lang="less"></style>
+<style lang="scss">
+html {
+  width: 100%;
+}
+</style>
