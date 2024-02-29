@@ -1,13 +1,6 @@
-<script setup></script>
-
 <template>
   <div>
     <NavBar />
+    <Action />
   </div>
 </template>
-
-<style lang="scss">
-html {
-  width: 100%;
-}
-</style>
