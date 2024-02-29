@@ -7,7 +7,7 @@ import { createMenu } from './menu'
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 900,
+    width: 320,
     height: 670,
     show: false,
     alwaysOnTop: true,

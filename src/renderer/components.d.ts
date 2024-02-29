@@ -7,9 +7,8 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    ElButton: typeof import('element-plus/es')['ElButton']
-    Navbar: typeof import('./src/components/Navbar.vue')['default']
-    NavBar: typeof import('./src/components/navBar.vue')['default']
+    ElButton: (typeof import('element-plus/es'))['ElButton']
+    NavBar: typeof import('./src/components/NavBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

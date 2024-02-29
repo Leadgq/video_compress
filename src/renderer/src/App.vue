@@ -2,11 +2,7 @@
 
 <template>
   <div>
-    <RouterView v-slot="{ Component }">
-      <Suspense>
-        <component :is="Component"></component>
-      </Suspense>
-    </RouterView>
+    <NavBar />
   </div>
 </template>
 
