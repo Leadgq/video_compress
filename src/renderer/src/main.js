@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import App from './App.vue'
+import router from '@renderer/router'
 import '@renderer/assets/css/tailwind.css'
 import 'element-plus/dist/index.css'
 import '@renderer/assets/css/global.scss'
@@ -9,4 +10,5 @@ const app = createApp(App)
 const pinia = createPinia()
 pinia.use(piniaPersist)
 app.use(pinia)
+app.use(router)
 app.mount('#app')

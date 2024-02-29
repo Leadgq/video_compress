@@ -9,7 +9,9 @@ declare module 'vue' {
   export interface GlobalComponents {
     Action: typeof import('./src/components/Action.vue')['default']
     ControlButton: typeof import('./src/components/ControlButton.vue')['default']
+    CopyRight: typeof import('./src/components/CopyRight.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElEmpty: typeof import('element-plus/es')['ElEmpty']
     ElOption: typeof import('element-plus/es')['ElOption']
     ElSelect: typeof import('element-plus/es')['ElSelect']
     Frame: typeof import('./src/components/Frame.vue')['default']

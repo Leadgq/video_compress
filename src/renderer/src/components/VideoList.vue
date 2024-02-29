@@ -2,7 +2,10 @@
 import { ref } from 'vue'
 import { CloseOne } from '@icon-park/vue-next/es'
 import { isAbleArray } from 'tree-esm-lib'
-const videos = ref(['1', '2', '3'])
+const videos = ref(['1', '2', '3', '4'])
+function removeUploadedData(index) {
+  videos.value.splice(index, 1)
+}
 </script>
 
 <template>
@@ -10,11 +13,20 @@ const videos = ref(['1', '2', '3'])
     <template v-if="isAbleArray(videos)">
       <section v-for="(video, index) in videos" :key="index" class="videoContainer">
         <div class="w-[90%] truncate">{{ video }}</div>
-        <div class="icon">
+        <div class="icon" @click="removeUploadedData(index)">
           <close-one theme="outline" size="12" />
         </div>
       </section>
     </template>
+    <div v-else class="h-full p-3">
+      <div class="h-full w-full bg-white rounded-md shadow-md">
+        <el-empty :image-size="80">
+          <template #description>
+            <span class="text-sm text-slate-400"> 暂无可压缩视频</span>
+          </template>
+        </el-empty>
+      </div>
+    </div>
   </main>
 </template>
 
