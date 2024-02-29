@@ -5,13 +5,13 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'Home',
+      name: 'home',
       component: () => import('@renderer/views/Home.vue')
     },
     {
-      path: '/other',
-      name: 'Other',
-      component: () => import('@renderer/views/Other.vue')
+      path: '/setting',
+      name: 'setting',
+      component: () => import('@renderer/views/Setting.vue')
     }
   ]
 })
