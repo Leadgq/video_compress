@@ -3445,6 +3445,11 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
+tree-esm-lib@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.npmmirror.com/tree-esm-lib/-/tree-esm-lib-0.2.1.tgz#12d0c96ad5d33a22b76af632a47849655572e5c9"
+  integrity sha512-bNF2JXxn1fFOueLWmJXzLbpF0O8UH4B7ZHJWvTEc8lqOQrFurFPcvhudIrnCz1aSkaWhwc58EG9/FYN6Ncn8mQ==
+
 truncate-utf8-bytes@^1.0.0:
   version "1.0.2"
   resolved "https://registry.npmmirror.com/truncate-utf8-bytes/-/truncate-utf8-bytes-1.0.2.tgz#405923909592d56f78a5818434b0b78489ca5f2b"

@@ -24,6 +24,7 @@
     "element-plus": "^2.5.1",
     "pinia": "^2.1.7",
     "pinia-plugin-persist": "^1.0.0",
+    "tree-esm-lib": "^0.2.1",
     "unplugin-auto-import": "^0.17.3",
     "unplugin-vue-components": "^0.26.0",
     "vue-router": "4"
