@@ -2,10 +2,41 @@
 import { ref } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useConfigStore } from '@renderer/store'
-const { config } = storeToRefs(useConfigStore())
+import { ElMessage } from 'element-plus'
+const store = useConfigStore()
+const { config } = storeToRefs(store)
+const { addSize, addFrame } = store
 
 const newSize = ref('')
 const newFrame = ref('')
+
+async function addFrameAction() {
+  try {
+    if (!newFrame.value) {
+      ElMessage.error('请输入分辨率')
+      return
+    }
+    await addFrame(newFrame.value)
+    ElMessage.success('添加分辨率成功')
+    newFrame.value = ''
+  } catch (e) {
+    ElMessage.error(e)
+  }
+}
+
+async function addSizeAction() {
+  try {
+    if (!newSize.value) {
+      ElMessage.error('请输入帧数')
+      return
+    }
+    await addSize(newSize.value)
+    ElMessage.success('添加帧数成功')
+    newSize.value = ''
+  } catch (e) {
+    ElMessage.error(e)
+  }
+}
 </script>
 
 <template>
@@ -24,7 +55,7 @@ const newFrame = ref('')
       </div>
       <div class="mt-2 flex gap-2">
         <el-input v-model="newFrame" placeholder="请输入1920x1080的数据格式" clearable />
-        <el-button type="primary">增加</el-button>
+        <el-button type="primary" @click="addFrameAction">增加</el-button>
       </div>
     </section>
     <section class="sectionContainer">
@@ -47,7 +78,7 @@ const newFrame = ref('')
           min="1"
           clearable
         />
-        <el-button type="primary">增加</el-button>
+        <el-button type="primary" @click="addSizeAction">增加</el-button>
       </div>
     </section>
   </div>

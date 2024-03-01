@@ -13,14 +13,24 @@ export const useConfigStore = defineStore('config', {
   },
   actions: {
     addSize(size) {
-      if (!this.config.sizes.includes(size)) {
-        this.config.sizes.push(size)
-      }
+      return new Promise((resolve, reject) => {
+        if (!this.config.sizes.includes(size)) {
+          this.config.sizes.push(size)
+          resolve()
+        } else {
+          reject('Size already exists')
+        }
+      })
     },
     addFrame(frame) {
-      if (!this.config.frames.includes(frame)) {
-        this.config.frames.push(frame)
-      }
+      return new Promise((resolve, reject) => {
+        if (!this.config.frames.includes(frame)) {
+          this.config.frames.push(frame)
+          resolve()
+        } else {
+          reject('Frame already exists')
+        }
+      })
     }
   },
   persist: {
