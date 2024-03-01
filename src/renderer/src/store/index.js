@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { ElMessageBox, ElMessage } from 'element-plus'
 
 export const useConfigStore = defineStore('config', {
   state: () => {
@@ -6,8 +7,8 @@ export const useConfigStore = defineStore('config', {
       config: {
         sizes: [60, 30],
         size: 60,
-        frames: ['1920x1080', '1024x720'],
-        frame: '1920x1080'
+        frames: ['1920X1080', '1024X720'],
+        frame: '1920X1080'
       }
     }
   },
@@ -18,7 +19,7 @@ export const useConfigStore = defineStore('config', {
           this.config.sizes.push(size)
           resolve()
         } else {
-          reject('Size already exists')
+          reject('当前帧数已存在')
         }
       })
     },
@@ -28,9 +29,19 @@ export const useConfigStore = defineStore('config', {
           this.config.frames.push(frame)
           resolve()
         } else {
-          reject('Frame already exists')
+          reject('当前分辨率已存在')
         }
       })
+    },
+    async deleteSize(index) {
+      await ElMessageBox.confirm('确认删除?', '提示')
+      this.config.sizes.splice(index, 1)
+      ElMessage.success('删除成功')
+    },
+    async deleteFrame(index) {
+      await ElMessageBox.confirm('确认删除?', '提示')
+      this.config.frames.splice(index, 1)
+      ElMessage.success('删除成功')
     }
   },
   persist: {
