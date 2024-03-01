@@ -3,7 +3,7 @@
     <NavBar />
     <RouterView v-slot="{ Component }">
       <Suspense>
-        <component :is="Component" class="flex-1"></component>
+        <component :is="Component"></component>
       </Suspense>
     </RouterView>
     <CopyRight />

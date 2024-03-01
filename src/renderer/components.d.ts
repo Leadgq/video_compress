@@ -12,6 +12,7 @@ declare module 'vue' {
     CopyRight: typeof import('./src/components/CopyRight.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElEmpty: typeof import('element-plus/es')['ElEmpty']
+    ElInput: typeof import('element-plus/es')['ElInput']
     ElOption: typeof import('element-plus/es')['ElOption']
     ElSelect: typeof import('element-plus/es')['ElSelect']
     Frame: typeof import('./src/components/Frame.vue')['default']
