@@ -11,9 +11,26 @@ export const useConfigStore = defineStore('config', {
       }
     }
   },
-  actions: {},
+  actions: {
+    addSize(size) {
+      if (!this.config.sizes.includes(size)) {
+        this.config.sizes.push(size)
+      }
+    },
+    addFrame(frame) {
+      if (!this.config.frames.includes(frame)) {
+        this.config.frames.push(frame)
+      }
+    }
+  },
   persist: {
     enabled: true,
-    strategies: []
+    strategies: [
+      {
+        key: 'config',
+        storage: localStorage,
+        paths: ['config']
+      }
+    ]
   }
 })
