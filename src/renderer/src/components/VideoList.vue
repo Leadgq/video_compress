@@ -16,7 +16,9 @@ const progressArray = ref([40, 60, 80, 100])
         v-for="(video, index) in videos"
         :key="index"
         class="videoContainer"
-        :style="`--process: ${progressArray[index]}%`"
+        :style="{
+          '--process': progressArray[index] + '%'
+        }"
       >
         <div class="w-[90%] truncate z-10">{{ video }}</div>
         <div class="icon" @click="removeUploadedData(index)">
