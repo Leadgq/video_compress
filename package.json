@@ -19,9 +19,12 @@
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.0",
     "@electron-toolkit/utils": "^3.0.0",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@ffprobe-installer/ffprobe": "^2.1.2",
     "@icon-park/vue-next": "^1.4.2",
     "electron-updater": "^6.1.7",
     "element-plus": "^2.5.1",
+    "fluent-ffmpeg": "^2.1.2",
     "pinia": "^2.1.7",
     "pinia-plugin-persist": "^1.0.0",
     "tree-esm-lib": "^0.2.1",

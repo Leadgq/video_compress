@@ -2,10 +2,10 @@
   <main class="flex justify-center">
     <section class="flex gap-2">
       <div class="button">
-        <plus theme="outline" size="28" />
+        <Plus theme="outline" size="28" />
       </div>
-      <div class="button">
-        <update-rotation theme="outline" size="28" />
+      <div class="button" @click="videoCompress">
+        <UpdateRotation theme="outline" size="28" />
       </div>
     </section>
   </main>
@@ -13,6 +13,10 @@
 
 <script setup>
 import { Plus, UpdateRotation } from '@icon-park/vue-next/es'
+
+function videoCompress() {
+  window.api.compress()
+}
 </script>
 
 <style lang="scss" scoped>

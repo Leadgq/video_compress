@@ -3,13 +3,14 @@ import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 import { createMenu } from './menu'
+import './ffmpeg'
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 340,
     height: 670,
     show: false,
-    alwaysOnTop: true,
+    alwaysOnTop: false,
     frame: false,
     resizable: false,
     autoHideMenuBar: true, //When customizing a menu, it needs to be set to false
