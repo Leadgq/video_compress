@@ -5,12 +5,13 @@ import icon from '../../resources/icon.png?asset'
 import { createMenu } from './menu'
 
 function createWindow() {
-  // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 340,
     height: 670,
     show: false,
     alwaysOnTop: true,
+    frame: false,
+    resizable: false,
     autoHideMenuBar: true, //When customizing a menu, it needs to be set to false
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {

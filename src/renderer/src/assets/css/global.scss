@@ -22,3 +22,17 @@ html {
     background: rgba(0, 0, 0, 0.12);
     -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
+
+.drag {
+    -webkit-app-region: drag;
+  }
+  
+  .no-drag,
+  input,
+  select,
+  textarea,
+  option {
+    -webkit-app-region: no-drag;
+  }
+  

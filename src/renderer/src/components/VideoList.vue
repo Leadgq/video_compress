@@ -2,17 +2,23 @@
 import { ref } from 'vue'
 import { CloseOne } from '@icon-park/vue-next/es'
 import { isAbleArray } from 'tree-esm-lib'
-const videos = ref(['1', '2', '3', '4'])
+const videos = ref(['112333333333333333333333', '2', '3', '4'])
 function removeUploadedData(index) {
   videos.value.splice(index, 1)
 }
+const progressArray = ref([40, 60, 80, 100])
 </script>
 
 <template>
   <main class="flex-1 overflow-y-auto">
     <template v-if="isAbleArray(videos)">
-      <section v-for="(video, index) in videos" :key="index" class="videoContainer">
-        <div class="w-[90%] truncate">{{ video }}</div>
+      <section
+        v-for="(video, index) in videos"
+        :key="index"
+        class="videoContainer"
+        :style="`--process: ${progressArray[index]}%`"
+      >
+        <div class="w-[90%] truncate z-10">{{ video }}</div>
         <div class="icon" @click="removeUploadedData(index)">
           <close-one theme="outline" size="12" />
         </div>
@@ -35,7 +41,12 @@ function removeUploadedData(index) {
   @apply px-3 py-2 
   bg-white mb-2 mx-3 rounded-md 
   text-slate-600 text-xs flex justify-between
-   items-center;
+   items-center relative;
+  &::before {
+    content: '';
+    @apply absolute left-0 top-0  z-0 h-full bg-yellow-200   rounded-md;
+    width: var(--process);
+  }
   .icon {
     @apply text-slate-500  
      cursor-pointer opacity-70 
